@@ -1,6 +1,8 @@
 import './App.css';
 import { NavBar } from './components/NavBar';
-import { Banner } from './components/Banner';
+import Home from './pages/Home';
+import About from './pages/About';
+import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -8,7 +10,12 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Banner />
+      <div className='container'>
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/About' element={<About />} />
+          </Routes>
+      </div>
     </div>
   );
 }
